@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
 }
 
@@ -13,10 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Spend',
+      title: 'SpendX',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.orange,
       ),
       home: const MyHomePage(title: 'Home Page'),
     );
@@ -57,17 +59,153 @@ class _MyHomePageState extends State<MyHomePage> {
   // For Preview
   loadPreviouseEvents() {
     mySelectedEvents = {
-      "2024-03-02": [
-        {"eventAmount": "4500", "eventDescp": "Change iPhone Battery"},
-        {"eventAmount": "3600", "eventDescp": "Little Hangout"},
-        {"eventAmount": "2760", "eventDescp": "Dinner"}
+      "2024-02-01": [
+        {"eventAmount": "5000", "eventDescp": "Dormitory rent"},
+        {"eventAmount": "100", "eventDescp": "Gasoline"},
+        {"eventAmount": "120", "eventDescp": "Food"}
+      ],
+      "2024-02-03": [
+        {"eventAmount": "150", "eventDescp": "Food"},
+        {"eventAmount": "250", "eventDescp": "Internet"},
+        {"eventAmount": "100", "eventDescp": "Netflix"}
+      ],
+      "2024-02-04": [
+        {"eventAmount": "150", "eventDescp": "Food"},
+        {"eventAmount": "45", "eventDescp": "Tea"}
+      ],
+      "2024-02-05": [
+        {"eventAmount": "100", "eventDescp": "Food"},
+        {"eventAmount": "300", "eventDescp": "Hangout"}
+      ],
+      "2024-02-07": [
+        {"eventAmount": "105", "eventDescp": "Food"},
+        {"eventAmount": "50", "eventDescp": "Tea"}
+      ],
+      "2024-02-08": [
+        {"eventAmount": "90", "eventDescp": "Food"},
+        {"eventAmount": "20", "eventDescp": "Snacks"},
+        {"eventAmount": "250", "eventDescp": "Clothes"},
+      ],
+      "2024-02-09": [
+        {"eventAmount": "120", "eventDescp": "Food"},
+        {"eventAmount": "45", "eventDescp": "Water pack"}
+      ],
+      "2024-02-10": [
+        {"eventAmount": "135", "eventDescp": "Food"},
+        {"eventAmount": "100", "eventDescp": "Gasoline"},
+        {"eventAmount": "42", "eventDescp": "Pepsi"},
+      ],
+      "2024-02-12": [
+        {"eventAmount": "150", "eventDescp": "Food"},
+      ],
+      "2024-02-13": [
+        {"eventAmount": "115", "eventDescp": "Food"},
+        {"eventAmount": "30", "eventDescp": "Bubble Tea"},
+      ],
+      "2024-02-14": [
+        {"eventAmount": "145", "eventDescp": "Food"},
+        {"eventAmount": "45", "eventDescp": "Coffee"},
+      ],
+      "2024-02-15": [
+        {"eventAmount": "140", "eventDescp": "Food"},
+        {"eventAmount": "45", "eventDescp": "Coffee"},
+      ],
+      "2024-02-18": [
+        {"eventAmount": "150", "eventDescp": "Food"},
+        {"eventAmount": "40", "eventDescp": "Coffee"},
+      ],
+      "2024-02-20": [
+        {"eventAmount": "120", "eventDescp": "Food"},
+        {"eventAmount": "40", "eventDescp": "Bubble Tea"},
+      ],
+      "2024-02-21": [
+        {"eventAmount": "90", "eventDescp": "Food"},
+        {"eventAmount": "30", "eventDescp": "Tea"},
+      ],
+      "2024-02-22": [
+        {"eventAmount": "95", "eventDescp": "Food"},
+        {"eventAmount": "50", "eventDescp": "Coffee"},
+      ],
+      "2024-02-23": [
+        {"eventAmount": "95", "eventDescp": "Food"},
+        {"eventAmount": "50", "eventDescp": "Snacks"},
+      ],
+      "2024-02-24": [
+        {"eventAmount": "95", "eventDescp": "Food"},
+        {"eventAmount": "30", "eventDescp": "Bubble Tea"},
+      ],
+      "2024-02-25": [
+        {"eventAmount": "95", "eventDescp": "Food"},
+        {"eventAmount": "50", "eventDescp": "Snacks"},
+      ],
+      "2024-02-26": [
+        {"eventAmount": "95", "eventDescp": "Food"},
+        {"eventAmount": "50", "eventDescp": "Snacks"},
+        {"eventAmount": "45", "eventDescp": "Water pack"}
+      ],
+      "2024-02-29": [
+        {"eventAmount": "95", "eventDescp": "Food"},
+        {"eventAmount": "50", "eventDescp": "Snacks"},
+      ],
+      "2024-03-01": [
+        {"eventAmount": "5000", "eventDescp": "Dormitory rent"},
+        {"eventAmount": "100", "eventDescp": "Gasoline"},
+        {"eventAmount": "150", "eventDescp": "Food"}
+      ],
+      "2024-03-03": [
+        {"eventAmount": "120", "eventDescp": "Food"},
+        {"eventAmount": "40", "eventDescp": "Tea"},
+        {"eventAmount": "250", "eventDescp": "Internet"},
+        {"eventAmount": "100", "eventDescp": "Netflix"}
+      ],
+      "2024-03-04": [
+        {"eventAmount": "150", "eventDescp": "Food"},
+        {"eventAmount": "45", "eventDescp": "Tea"}
+      ],
+      "2024-03-05": [
+        {"eventAmount": "100", "eventDescp": "Food"},
+        {"eventAmount": "45", "eventDescp": "Water pack"}
+      ],
+      "2024-03-06": [
+        {"eventAmount": "150", "eventDescp": "Food"},
+        {"eventAmount": "30", "eventDescp": "Snacks"},
+      ],
+      "2024-03-08": [
+        {"eventAmount": "90", "eventDescp": "Food"},
+        {"eventAmount": "20", "eventDescp": "Snacks"},
+      ],
+      "2024-03-09": [
+        {"eventAmount": "120", "eventDescp": "Food"},
+      ],
+      "2024-03-11": [
+        {"eventAmount": "150", "eventDescp": "Food"},
+        {"eventAmount": "199", "eventDescp": "Shabu"},
       ],
       "2024-03-13": [
-        {"eventAmount": "11200", "eventDescp": "Omakase"},
-        {"eventAmount": "5600", "eventDescp": "Cat Baht"}
+        {"eventAmount": "115", "eventDescp": "Food"},
+        {"eventAmount": "30", "eventDescp": "Bubble Tea"},
+      ],
+      "2024-03-14": [
+        {"eventAmount": "145", "eventDescp": "Food"},
+        {"eventAmount": "45", "eventDescp": "Coffee"},
+      ],
+      "2024-03-15": [
+        {"eventAmount": "140", "eventDescp": "Food"},
+        {"eventAmount": "45", "eventDescp": "Coffee"},
+      ],
+      "2024-03-16": [
+        {"eventAmount": "100", "eventDescp": "Food"},
+        {"eventAmount": "250", "eventDescp": "Clothes"},
+        {"eventAmount": "300", "eventDescp": "Birthday Party"},
+      ],
+      "2024-03-17": [
+        {"eventAmount": "120", "eventDescp": "Food"},
+        {"eventAmount": "40", "eventDescp": "Tea"},
       ],
       "2024-03-19": [
-        {"eventAmount": "7600", "eventDescp": "Dinner"}
+        {"eventAmount": "130", "eventDescp": "Food"},
+        {"eventAmount": "40", "eventDescp": "Coffee"},
+        {"eventAmount": "50", "eventDescp": "Snacks"},
       ],
     };
   }
@@ -98,31 +236,79 @@ class _MyHomePageState extends State<MyHomePage> {
   void _spendDialog() async {
     await showDialog(
       context: context,
-      builder: (context) => Container(
-        child: AlertDialog(
-          backgroundColor: Colors.white,
-          title: const Text("Spend"),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
+      builder: (context) => AlertDialog(
+        surfaceTintColor: Colors.white,
+        backgroundColor: Colors.white,
+        title: const Text("Spend"),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
                 controller: amountController,
-                decoration: const InputDecoration(labelText: "Amount"),
+                decoration: InputDecoration(
+                  labelText: "Amount",
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  prefixIcon: const Align(
+                    widthFactor: 1.0,
+                    heightFactor: 1.0,
+                    child: Icon(
+                      Icons.money_off_csred_rounded,
+                    ),
+                  ),
+                ),
+                keyboardType: TextInputType.number),
+            const SizedBox(
+              height: 10,
+            ),
+            TextField(
+              controller: despController,
+              decoration: InputDecoration(
+                labelText: "Description",
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                prefixIcon: const Align(
+                  widthFactor: 1.0,
+                  heightFactor: 1.0,
+                  child: Icon(
+                    Icons.list_alt_rounded,
+                  ),
+                ),
               ),
-              TextField(
-                controller: despController,
-                decoration: const InputDecoration(labelText: "Description"),
-              )
-            ],
+            )
+          ],
+        ),
+        actions: [
+          SizedBox(
+            height: 50,
+            width: 100,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+                elevation: 0,
+                side: const BorderSide(color: Colors.black),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+              ),
+              onPressed: () => Navigator.pop(context),
+              child: const Text(
+                "Cancel",
+              ),
+            ),
           ),
-          actions: [
-            TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text(
-                  "Cancel",
-                  style: TextStyle(color: Colors.red),
-                )),
-            TextButton(
+          SizedBox(
+            height: 50,
+            width: 100,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
+                elevation: 0,
+                side: const BorderSide(color: Colors.black),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+              ),
               onPressed: () {
                 if (amountController.text.isEmpty &&
                     despController.text.isEmpty) {
@@ -164,9 +350,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 }
               },
               child: const Text("OK"),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
@@ -201,82 +387,158 @@ class _MyHomePageState extends State<MyHomePage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
+        surfaceTintColor: Colors.white,
+        backgroundColor: Colors.white,
         title: const Text("Edit Event"),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             TextField(
               controller: amountController,
-              decoration: const InputDecoration(labelText: "Amount"),
+              decoration: InputDecoration(
+                labelText: "Amount",
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                prefixIcon: const Align(
+                  widthFactor: 1.0,
+                  heightFactor: 1.0,
+                  child: Icon(
+                    Icons.money_off_csred_rounded,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             TextField(
               controller: despController,
-              decoration: const InputDecoration(labelText: "Description"),
+              decoration: InputDecoration(
+                labelText: "Description",
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                prefixIcon: const Align(
+                  widthFactor: 1.0,
+                  heightFactor: 1.0,
+                  child: Icon(
+                    Icons.list_alt_rounded,
+                  ),
+                ),
+              ),
             )
           ],
         ),
         actions: [
-          TextButton(
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: const Text('Confirm Delete'),
-                  content:
-                      const Text('Are you sure you want to delete this event?'),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        setState(() {
-                          dayExpendTotal -= int.parse(myEvent['eventAmount']!);
-                          _listOfDayEvents(_selectedDay!).remove(myEvent);
-                        });
-                        Navigator.pop(context); // Close confirm delete dialog
-                        Navigator.pop(context); // Close edit dialog
-                      },
-                      child: const Text('Yes'),
-                    ),
-                    TextButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: const Text('No'),
-                    ),
-                  ],
-                ),
-              );
-            },
-            style: TextButton.styleFrom(
-              primary: Colors.red,
-            ),
-            child: const Text("Delete"),
-          ),
-          TextButton(
-            onPressed: () {
-              if (amountController.text.isEmpty &&
-                  despController.text.isEmpty) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text("Require Amount and Description"),
-                    duration: Duration(seconds: 2),
+          SizedBox(
+            height: 50,
+            width: 100,
+            child: ElevatedButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    surfaceTintColor: Colors.white,
+                    backgroundColor: Colors.white,
+                    title: const Text('Confirm Delete'),
+                    content:
+                        const Text('Are you sure you want to delete this?'),
+                    actions: [
+                      SizedBox(
+                        height: 50,
+                        width: 100,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            foregroundColor: Colors.black,
+                            elevation: 0,
+                            side: const BorderSide(color: Colors.black),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                          ),
+                          onPressed: () => Navigator.pop(context),
+                          child: const Text('No'),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 50,
+                        width: 100,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black,
+                            foregroundColor: Colors.white,
+                            elevation: 0,
+                            side: const BorderSide(color: Colors.black),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              dayExpendTotal -=
+                                  int.parse(myEvent['eventAmount']!);
+                              _listOfDayEvents(_selectedDay!).remove(myEvent);
+                            });
+                            Navigator.pop(
+                                context); // Close confirm delete dialog
+                            Navigator.pop(context); // Close edit dialog
+                          },
+                          child: const Text('Yes'),
+                        ),
+                      ),
+                    ],
                   ),
                 );
-                return;
-              } else {
-                setState(() {
-                  int dayExpendNow = int.parse(amountController.text);
-                  dayExpendTotal +=
-                      dayExpendNow - int.parse(myEvent['eventAmount']!);
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+                elevation: 0,
+                side: const BorderSide(color: Colors.black),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+              ),
+              child: const Text("Delete"),
+            ),
+          ),
+          SizedBox(
+            height: 50,
+            width: 100,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
+                elevation: 0,
+                side: const BorderSide(color: Colors.black),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+              ),
+              onPressed: () {
+                if (amountController.text.isEmpty &&
+                    despController.text.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Require Amount and Description"),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                  return;
+                } else {
+                  setState(() {
+                    int dayExpendNow = int.parse(amountController.text);
+                    dayExpendTotal +=
+                        dayExpendNow - int.parse(myEvent['eventAmount']!);
 
-                  myEvent['eventAmount'] = amountController.text;
-                  myEvent['eventDescp'] = despController.text;
-                });
+                    myEvent['eventAmount'] = amountController.text;
+                    myEvent['eventDescp'] = despController.text;
+                  });
 
-                amountController.clear();
-                despController.clear();
-                Navigator.pop(context);
-                return;
-              }
-            },
-            child: const Text("OK"),
+                  amountController.clear();
+                  despController.clear();
+                  Navigator.pop(context);
+                  return;
+                }
+              },
+              child: const Text("OK"),
+            ),
           )
         ],
       ),
@@ -285,6 +547,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    FlutterNativeSplash.remove();
     return Scaffold(
       appBar: AppBar(
         leading: Container(
@@ -301,7 +564,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                "Spend",
+                "SpendX",
                 style: TextStyle(
                   fontSize: 20,
                 ),
@@ -394,8 +657,11 @@ class _MyHomePageState extends State<MyHomePage> {
                             style: TextStyle(
                               fontSize: 25,
                               fontWeight: FontWeight.bold,
-                              color:
-                                  dayExpendTotal > dayLimit ? Colors.red : null,
+                              color: dayLimit == 0
+                                  ? Colors.black
+                                  : dayExpendTotal > dayLimit
+                                      ? Colors.red
+                                      : null,
                             ),
                           ),
                         ],
@@ -480,10 +746,21 @@ class _MyHomePageState extends State<MyHomePage> {
                         showDialog(
                           context: context,
                           builder: (context) => AlertDialog(
+                            surfaceTintColor: Colors.white,
+                            backgroundColor: Colors.white,
                             title: const Text('Set Day Limit'),
                             content: TextField(
-                              decoration: const InputDecoration(
-                                labelText: 'Enter Day Limit',
+                              decoration: InputDecoration(
+                                labelText: "Day Limit",
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15)),
+                                prefixIcon: const Align(
+                                  widthFactor: 1.0,
+                                  heightFactor: 1.0,
+                                  child: Icon(
+                                    Icons.money_off_csred_rounded,
+                                  ),
+                                ),
                               ),
                               keyboardType: TextInputType.number,
                               onChanged: (value) {
@@ -493,20 +770,45 @@ class _MyHomePageState extends State<MyHomePage> {
                               },
                             ),
                             actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: const Text(
-                                  'Cancel',
-                                  style: TextStyle(color: Colors.red),
+                              SizedBox(
+                                height: 50,
+                                width: 100,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.white,
+                                    foregroundColor: Colors.black,
+                                    elevation: 0,
+                                    side: const BorderSide(color: Colors.black),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text(
+                                    'Cancel',
+                                  ),
                                 ),
                               ),
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: const Text('Set'),
+                              SizedBox(
+                                height: 50,
+                                width: 100,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.black,
+                                    foregroundColor: Colors.white,
+                                    elevation: 0,
+                                    side: const BorderSide(color: Colors.black),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text('Set'),
+                                ),
                               ),
                             ],
                           ),
@@ -525,7 +827,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               size: 30.0,
                             ),
                             Text(
-                              "Set Day Limit              ",
+                              "Day Limit                    ",
                               style: TextStyle(
                                 fontSize: 15,
                               ),
@@ -596,13 +898,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            const Text(
-                              'Note ',
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
                             Text(
                               '${myEvents['eventDescp']}',
                               style: const TextStyle(

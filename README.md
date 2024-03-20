@@ -2,6 +2,8 @@
 
 Payment recording app
 
+![alt text](https://github.com/jschomchoey/SpendX/blob/main/assets/images/preview.png?raw=true)
+
 ### Requirement
 
 - Flutter
